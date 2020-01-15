@@ -7,7 +7,7 @@
 
 
 
-![预览](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
+!['预览'](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
 
 
 
