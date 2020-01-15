@@ -3,8 +3,8 @@
 把项目下载后放到Hbuilder中 用微信小程序预览即可打开
 
 
+![image](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
 
-https://github.com/menglin1997/BLEConn/blob/master/static/1.gif
 
 
 
