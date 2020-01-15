@@ -7,7 +7,7 @@
 
 
 
-![image](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
+![image width="150px"](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
 
 
 
