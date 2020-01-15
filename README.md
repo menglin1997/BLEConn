@@ -4,7 +4,7 @@
 
 
 
-
+<img src="F:\uniApp\BLEConn\static\1.gif" alt="1" style="zoom:50%;" />
 
 # 项目介绍
 
