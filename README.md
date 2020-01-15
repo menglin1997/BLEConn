@@ -7,7 +7,7 @@
 
 
 
-!['demo'](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
+![demo.gif](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
 
 
 
