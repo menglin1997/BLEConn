@@ -1,5 +1,29 @@
-1. 页面命名小驼峰
-2. request 请求使用全局 ` this.$http `
-3. 本地储存storage key 必须在‘/utils/storageTypes.js’ 里定义常量，使用时也必须引入常量
-4. 微信小程序现无法做到*强制登录*，在明确需要token的页面必须使用‘utils/user’ 里 ` checkLogin `，判断是否登录。如必须登录，弹框询问用户是否去登陆，如用户点击确定，则调用‘utils/myUtils.js’ 里 ` redirectLogin ` 函数
-5. 全局css命名空间` am `
+# 启动
+
+把项目下载后放到Hbuilder中 用微信小程序预览即可打开
+
+
+
+
+
+# 项目介绍
+
+> 本项目是由uniapp开发的微信小程序
+>
+> 主要功能有搜索低功耗蓝牙，连接低功耗蓝牙，给蓝牙发送命令，接收蓝牙回复的命令
+
+# 功能介绍以及使用说明
+
+> 用到的文件有`pages/login/login`, `utils/socket/BLEConn.js`两个文件
+>
+> `utils/socket/BLEConn.js`是对蓝牙操作的封装
+>
+> `pages/login/login`是对蓝牙的连接操作
+
+## `pages/login/login`业务逻辑
+
+1. 点击按钮调用BLEConn封装的方法进行搜索蓝牙
+2. 搜索到蓝牙之后点击需要连接的蓝牙进行连接
+3. 连接时调用createBLE方法 ，该方法会传入两个参数，一个是需要连接的蓝牙对象，另一个是发送命令时候的服务的uuid（此uuid可以问给蓝牙协议的人）
+4. 连接不上会进行三次重连操作 ，三次都没有连接上提示连接失败
+
