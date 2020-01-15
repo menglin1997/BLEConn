@@ -4,7 +4,7 @@
 
 
 
-<img src="https://github.com/menglin1997/BLEConn/tree/master/static/1.gif" alt="1" style="zoom:50%;" />
+https://github.com/menglin1997/BLEConn/blob/master/static/1.gif
 
 
 
