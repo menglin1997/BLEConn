@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "44945910",
+      "name": "箭头",
+      "font_class": "ai36",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "44945927",
+      "name": "输出",
+      "font_class": "shuchu",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "45432605",
+      "name": "箭头",
+      "font_class": "ai36-copy",
+      "unicode": "e717",
+      "unicode_decimal": 59159
+    }
+  ]
+}

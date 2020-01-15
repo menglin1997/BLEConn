@@ -1,0 +1,73 @@
+page {
+	font-size: 30rpx;
+	font-family: '思源黑体', 'Segoe UI', 'Lucida Grande', Helvetica, Arial, 'Microsoft YaHei';
+	color: #3a3a3a;
+	width: 100vw;
+	height: 100vh;
+	background: #1b294b;
+}
+
+page,
+view,
+text,
+image,
+scroll-view,
+swiper,
+swiper-item {
+	box-sizing: border-box;
+}
+
+.am-clear-native-style {
+	/* 清除原生默认样式 */
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	&:after {
+		border: none;
+	}
+}
+// 超出出现省略号  param {Number}  $value - 行数，默认2 
+@mixin amOverLineClamp($value: 2) {
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $value;
+	line-clamp: $value;
+	-webkit-box-orient: vertical;
+}
+// 超出两行出现省略号
+.am-line-clamp-two {
+	@include amOverLineClamp();
+}
+
+.am-text-eill {
+	/*超出省略号*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.am-text-break {
+	/*换行*/
+	white-space: normal;
+	word-break: break-all;
+}
+
+.am-align-center {
+	/*文本居中*/
+	text-align: center;
+}
+
+.am-block {
+  display: block;
+}
+
+.am-inline {
+  display: inline;
+}
+
+.am-inline-block {
+  display: inline-block;
+}

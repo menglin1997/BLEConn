@@ -1,0 +1,46 @@
+// 屏幕
+	.screen {
+		touch-action: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		// height:379rpx;
+		height:350rpx;
+		background:rgba(0,97,192,1);
+		box-shadow:0rpx 8rpx 8rpx 0rpx rgba(1,90,176,0.66);
+		border-radius:8rpx;
+		margin: auto;
+		color: #fff;
+		font-size: 40rpx;
+		font-weight: bold;
+		padding: 22rpx;
+		overflow: hidden;
+		.line {
+			display: flex;
+			justify-content: space-between;
+		}
+		.center {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	// 居中的布局
+	.screen_c {
+		justify-content: center;
+	}
+	.margin_c {
+		margin: 56rpx 0;
+	}
+	.en_l {
+		margin-left: 30rpx;
+	}
+	.center {
+		line-height: 45rpx;
+	}
+	.num {
+		background: #000 !important;
+	}
+	.bg {
+		background: #000 !important;
+		// background: #0086B3;
+	}

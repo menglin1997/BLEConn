@@ -1,0 +1,212 @@
+
+	.box {
+		touch-action: none;
+	}
+	.content {
+		touch-action: none;
+		padding: 24rpx;
+		height: 100%;
+		padding-bottom: 0;
+		padding-top: 15rpx;
+		// padding-bottom: 5vh;
+		
+		
+
+		/* // 按钮公共样式 */
+		.btns {
+			padding-top: 26rpx;
+			.btn {
+				padding: 35rpx 0;
+				width:160rpx;
+				height:160rpx;
+				background:linear-gradient(0deg,rgba(0,85,173,1) 0%,rgba(0,137,255,1) 100%);
+				border-radius:50%;
+				box-shadow:3rpx 5rpx 20rpx 0rpx rgba(0,93,187,0.48), 1rpx 1rpx 32rpx 0rpx rgba(0,93,182,0.64);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				color: #fff;
+				justify-content: space-around;
+				border:7rpx solid linear-gradient(0deg,rgba(0,85,173,1) 0%,rgba(0,137,255,1) 100%);
+				.s {
+					font-size: 36rpx;
+					text-shadow:0rpx 1rpx 1rpx rgba(60,70,91,0.75);
+				}
+				.x {
+					font-size: 25rpx;
+					text-shadow:0rpx 1rpx 1rpx rgba(60,70,91,0.75);
+				}
+			}
+			/* // 按钮布局 */
+			.box {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-weight: bold;
+				.none {
+					background: none;
+					box-shadow:none;
+					border: none;
+				}
+			}
+			/* // 中间大按钮 */
+			.center {
+				justify-content: space-around;
+				.left {
+					width: 400rpx;
+					height: 400rpx;
+					background: none;
+					box-shadow: none;
+					background: url(../../static/images/big_btn.png) no-repeat;
+					background-size: 100% 100%;
+					position: relative;
+					.center_btn {
+						position: absolute;
+						width:70rpx;
+						height:70rpx;
+						z-index: 1;
+					}
+					.top_btn {
+						// top: 40rpx;
+						top: 10rpx;
+						padding-top: 10rpx;
+						left: 50%;
+						// width:51rpx;
+						// height:31rpx;
+						transform: translateX(-50%);
+						background: url(../../static/images/top_btn.png) no-repeat center;
+						background-size: 50rpx 30rpx;
+					}
+					.right_btn {
+						top: 50%;
+						// right: 40rpx;
+						right: 10rpx;
+						padding-right: 30rpx;
+						// width: 31rpx;
+						// height: 51rpx;
+						transform: translateY(-50%);
+						background: url(../../static/images/right_btn.png) no-repeat center;
+						background-size: 30rpx 50rpx;
+					}
+					.left_btn {
+						top: 50%;
+						// left: 40rpx;
+						padding-left: 30rpx;
+						left: 10rpx;
+						// width: 31rpx;
+						// height: 51rpx;
+						transform: translateY(-50%);
+						background: url(../../static/images/left_btn.png) no-repeat center;
+						background-size: 30rpx 50rpx;
+					}
+					.bottom_btn {
+						// bottom: 40rpx;
+						bottom: 10rpx;
+						left: 50%;
+						padding-bottom: 30rpx;
+						// width:51rpx;
+						// height:31rpx;
+						transform: translateX(-50%);
+						background: url(../../static/images/bottom_btn.png) no-repeat center;
+						background-size: 50rpx 30rpx;
+					}
+					.circel_btn {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 180rpx;
+						height: 180rpx;
+						transform: translate(-50%,-50%);
+						background: url(../../static/images/circel_btn.png) no-repeat;
+						background-size: 100% 100%;
+					}
+
+					/* // 点击特效
+					// 中间大按钮特效
+					// 上 */
+					.top_btn_hover {
+						background: url(../../static/images/top_btn_tap.png) no-repeat center;
+						background-size: 50rpx 30rpx;
+					}
+					/* // 下 */
+					.bottom_btn_hover {
+						background: url(../../static/images/bottom_btn_tap.png) no-repeat center;
+						background-size: 50rpx 30rpx;
+					}
+					/* // 左 */
+					.left_btn_hover {
+						background: url(../../static/images/left_btn_tap.png) no-repeat center;
+						background-size: 30rpx 50rpx;
+					}
+					/* // 右 */
+					.right_btn_hover {
+						background: url(../../static/images/right_btn_tap.png) no-repeat center;
+						background-size: 30rpx 50rpx;
+					}
+					/* // 中 */
+					.circel_btn_hover {
+						background: url(../../static/images/circel_btn_tap.png) no-repeat;
+						background-size: 180rpx 180rpx;
+					}
+				}
+			}
+			/* // 下方按钮 */
+			.bottom {
+				.red {
+					justify-content: space-between;
+					flex-direction: row;
+					.redChild {
+						width:80rpx;
+						height:160rpx;
+						background:linear-gradient(0deg,rgba(199,34,99,1) 0%,rgba(250,44,160,1) 100%);
+						// box-shadow:6rpx 10rpx 32rpx 0rpx rgba(12,19,36,0.48);
+						border-radius: 80rpx 0 0 80rpx;
+						display: flex;
+						flex-direction: column;
+						// justify-content: space-around;
+						padding-top: 45rpx;
+						align-items: center;
+					}
+					
+					.auto {
+						border-radius: 0rpx 80rpx 80rpx 0rpx;
+						// margin-left: 1rpx;
+						// background: url(../../static/images/right.png) no-repeat 100% 100% !important;
+					}
+					.Manu {
+						padding-right: -1rpx;
+						// background: url(../../static/images/left.png) no-repeat 100% 100% !important;
+					}
+				}
+			}
+		}
+		/* // 手指点击 */
+		.btn-hover {
+			width:160rpx;
+			height:160rpx;
+			background:linear-gradient(0deg,rgba(0,78,158,1) 0%,rgba(31,145,243,1) 100%);
+			background-size: 100% 100%;
+			border:7rpx solid rgba(14, 109, 198, 1);
+			box-shadow:3rpx 5rpx 20rpx 0rpx rgba(0,93,187,0.48), 1rpx 1rpx 32rpx 0rpx rgba(0,93,182,0.64);
+			border-radius:50%;
+		}
+		/* // 手动自动点击特效 */
+		.btn-hover-right {
+			box-shadow:6px 10px 32px 0px rgba(12,19,36,0.3) inset;
+		}
+		.btn-hover-left {
+			background: #0C1324;
+			box-shadow: 6px 10px 32px 0px rgba(12,19,36,0.3) inset;
+		}
+		.btn-hover-left1 {
+			background: darkred !important;
+		}
+		
+	}
+	.num {
+		background: #000 !important;
+	}
+	.bg {
+		background: #000 !important;
+		// background: #0086B3;
+	}
