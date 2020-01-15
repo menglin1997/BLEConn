@@ -27,3 +27,15 @@
 3. 连接时调用createBLE方法 ，该方法会传入两个参数，一个是需要连接的蓝牙对象，另一个是发送命令时候的服务的uuid（此uuid可以问给蓝牙协议的人）
 4. 连接不上会进行三次重连操作 ，三次都没有连接上提示连接失败
 
+# `utils/socket/BLEConn.js`业务逻辑
+
+1. 初始化蓝牙
+2. 搜索蓝牙列表，将搜索出的name值为空或者’未知设备‘并且包含有localName的蓝牙设备的name重新命名为localName的值，将搜索出来的deviceId重复的只保存一个
+
+# 分包接收访问下边的链接
+
+https://juejin.im/post/5e1b0bf25188252c4f2ba2bd
+
+# 分包发送访问下边的链接
+
+https://juejin.im/post/5e1b0c85e51d45588849581f
