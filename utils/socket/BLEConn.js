@@ -132,6 +132,12 @@ export function closeBle() {
 				// console.log(err)
 			}
 		})
+		// 断开蓝牙模块
+		uni.closeBluetoothAdapter({
+		  success(res) {
+		    console.log(res)
+		  }
+		})
 	}
 }
 // 6.连接蓝牙(连接之前应该把之前连接的蓝牙设备断开)
