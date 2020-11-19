@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: zml
+ * @Date: 2020-11-19 10:52:43
+ * @LastEditors: zml
+ * @LastEditTime: 2020-11-19 11:18:18
+-->
 # 启动
 
 把项目下载后放到Hbuilder中 用微信小程序预览即可打开
@@ -10,7 +18,7 @@
 
 # 项目介绍
 
-> 本项目是由uniapp开发的微信小程序
+> 本项目是由uniapp开发的微信小程序连接低功耗蓝牙
 >
 > 主要功能有搜索低功耗蓝牙，连接低功耗蓝牙，给蓝牙发送命令，接收蓝牙回复的命令
 
@@ -18,9 +26,16 @@
 
 > 用到的文件有`pages/login/login`, `utils/socket/BLEConn.js`两个文件
 >
-> `utils/socket/BLEConn.js`是对蓝牙操作的封装
+> `utils/socket/BLEConn.js`对蓝牙操作的封装（包含蓝牙列表搜索，蓝牙连接，蓝牙断开，蓝牙分包发送命令，蓝牙分包接收命令）
 >
-> `pages/login/login`是对蓝牙的连接操作
+> `pages/login/login`对蓝牙的连接操作
+
+## BLEConn.js方法说明
+> getBlooth 搜索蓝牙列表
+> createBLE 连接蓝牙
+> getCharacteristics 获取某个服务的特征值这里做了判断 有notify功能才会返回正确 可根据项目需要修改返回状态
+> writeBLE 写入命令-即给蓝牙发送命令（项目中是分包操作），如果不需要分包可参考hexToArrayBuffer方法转换命令
+> watchNotify 如果你项目里面有notify功能  这里会主动收到消息 
 
 ## `pages/login/login`业务逻辑
 

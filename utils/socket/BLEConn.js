@@ -336,7 +336,7 @@ var center = '' // 中间拼接部分
 var last = '' // 结尾部分
 var len = 0 // 包的长度
 // var flag = true // flag判断是否进行了分包操作 如果分包需要清空开始部分 中间部分 结尾部分
-export function	watchNotify(isHeart) {
+export function	watchNotify() {
 	// ArrayBuffer转16进度字符串示例
 	function ab2hex(buffer) {
 		const hexArr = Array.prototype.map.call(
@@ -353,8 +353,13 @@ export function	watchNotify(isHeart) {
 			console.log(res)
 			// 监听帧头帧尾
 			var resCode1 = ab2hex(res.value)
-			var resCode = resCode1.toUpperCase()
+			var resCode = resCode1.toUpperCase() // 收到蓝牙返回的命令（16进制）
 			console.log(resCode, '收到的')
+			/**
+			 * 
+			 * 以下是我项目中的分包接收操作（可注释）
+			 * 
+			 */
 		
 			// 1. 如果开头结尾和帧头帧尾一致并且长度一致就保留(说明长度完整)
 			if (resCode.substring(resCode.length - 2, resCode.length) == 'FE' && resCode.substring(0, 2) == '05') {
@@ -494,33 +499,50 @@ export function readBLE(deviceId, serviceId, characteristicId) {
 		}
 	})
 }
+
+/**
+ * s为要转换的字符串
+ * n为转换为几个一起的数
+ *'0102031A1B'类型转换为['0x11','0x02']   (n传2)
+ */
+function strToArr1(s, n) {
+	    // var s = "051102003"
+	    // console.log(s)
+	    var re = new RegExp(".{" + n + "}", "g")
+	    var a = []
+	    var n
+	    while ((n = re.exec(s)) != null) {
+	        a[a.length] = '0x' + n[0]
+	    }
+	    return a
+	}
+	
 // 14.写入功能.
+/**
+ * 
+ * @param {*} e 
+ * 需要发送给蓝牙的数据格式：['0x11','0x02']
+ * 
+ * strToArr1函数可将十六进制转换为数组'0102031A1B'类型转换为['0x11','0x02']
+ * 
+ */
 export function writeBLE(e) {
-	// console.log(e)
 	var deviceId = uni.getStorageSync("deviceId")
 	var serviceId = uni.getStorageSync("serviceId")
 	var characteristicId = uni.getStorageSync("characteristicId")
 	console.log(deviceId,serviceId, characteristicId)
 	// 向蓝牙设备发送一个0x00的16进制数据
 	return new Promise((resolve, reject) => {
+		// 分包发送
 		for (var i = 0;i < e.length; i += 20) {
 			var endLength = 0
-			// console.log(i)
 			if (i + 20 < e.length) {
 				var senddata = e
 				let buffer = new ArrayBuffer(20)
-
 				let dataView = new DataView(buffer)
 				for (var j = i; j < i + 20; j++) { 
 					dataView.setUint8(j - i, senddata[j])
 				}
-				// let dataSend = []
-				// for (var j = i; j < i + 20; j++) { 
-				// 	dataView.setUint8(j - i, senddata[j])
-					
-				// 	dataSend.push(dataView.getUint8(j-i)) 
-				// }
-				// console.log('多包发送的包数据:'+dataView.buffer)
 				uni.writeBLECharacteristicValue({
 					// 这里的 deviceId 需要在 getBluetoothDevices 或 onBluetoothDeviceFound 接口中获取
 					deviceId: deviceId,
@@ -530,14 +552,10 @@ export function writeBLE(e) {
 					characteristicId: characteristicId,
 					// 这里的value是ArrayBuffer类型
 					value: dataView.buffer,
-					// value: buffer,
 					success(res) {
-					
 						resolve(res)
-				
 					},
 					fail(err) {
-						// console.log(err)
 						reject(err)
 					}
 				})
@@ -545,36 +563,17 @@ export function writeBLE(e) {
 				sleep(0.02)
 			} else {
 				var senddata = e
-				// console.log(senddata)
-				
 				if (20 < e.length) {
-					
 					endLength = senddata.length - i
-					// console.log(endLength, 'endLength')
-				
 				} else{
-				
 					endLength = senddata.length
-					// console.log('endLength2', endLength)
-				
 				}
 				
 				let buffer = new ArrayBuffer(endLength)
-
-				// var dataSend = []
-				// console.log(senddata.length)
 				let dataViewLast = new DataView(buffer)
 				for (var k = i; k < senddata.length; k++) {
-					// console.log(k)
-					// console.log(i)
-					// console.log(senddata[k])
 					dataViewLast.setUint8(k-i, senddata[k])
-					// console.log(dataViewLast.getUint8(k-i))
-					// dataSend.push(dataViewLast.getUint8(k-i))
-
 				}
-				
-				
 				console.log('最后一包或第一数据:' + dataViewLast.buffer)
 				uni.writeBLECharacteristicValue({
 					// 这里的 deviceId 需要在 getBluetoothDevices 或 onBluetoothDeviceFound 接口中获取
@@ -585,12 +584,10 @@ export function writeBLE(e) {
 					characteristicId: characteristicId,
 					// 这里的value是ArrayBuffer类型
 					value: dataViewLast.buffer,
-					// value: buffer,
 					success(res) {
 						resolve(res)
 					},
 					fail(err) {
-						// console.log(err)
 						reject(err)
 					}
 				})
@@ -606,6 +603,20 @@ function sleep(delay) {
 	}
 }
 
+// 其他转换方法
+//16进制字符串转 ArrayBuffer
+hexToArrayBuffer = (hex) => {
+return new Uint8Array(
+	hex.match(/[\da-f]{2}/gi).map((byte) => {
+	return parseInt(byte, 16)
+	})
+).buffer
+}
+  
+//ArrayBuffer类型数据转为16进制字符串
+bufToHex = (buffer) => {
+return Array.prototype.map.call(new Uint8Array(buffer), (x) => ('00' + x.toString(16)).slice(-2)).join('')
+}
 
 
 
