@@ -605,7 +605,7 @@ function sleep(delay) {
 
 // 其他转换方法
 //16进制字符串转 ArrayBuffer
-hexToArrayBuffer = (hex) => {
+const hexToArrayBuffer = (hex) => {
 return new Uint8Array(
 	hex.match(/[\da-f]{2}/gi).map((byte) => {
 	return parseInt(byte, 16)
@@ -614,7 +614,7 @@ return new Uint8Array(
 }
   
 //ArrayBuffer类型数据转为16进制字符串
-bufToHex = (buffer) => {
+const bufToHex = (buffer) => {
 return Array.prototype.map.call(new Uint8Array(buffer), (x) => ('00' + x.toString(16)).slice(-2)).join('')
 }
 
