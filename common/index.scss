@@ -57,7 +57,7 @@
 					height: 400rpx;
 					background: none;
 					box-shadow: none;
-					background: url(../../static/images/big_btn.png) no-repeat;
+					background: red;
 					background-size: 100% 100%;
 					position: relative;
 					.center_btn {
@@ -74,7 +74,7 @@
 						// width:51rpx;
 						// height:31rpx;
 						transform: translateX(-50%);
-						background: url(../../static/images/top_btn.png) no-repeat center;
+						background: red;
 						background-size: 50rpx 30rpx;
 					}
 					.right_btn {
@@ -85,7 +85,7 @@
 						// width: 31rpx;
 						// height: 51rpx;
 						transform: translateY(-50%);
-						background: url(../../static/images/right_btn.png) no-repeat center;
+						background: red;
 						background-size: 30rpx 50rpx;
 					}
 					.left_btn {
@@ -96,7 +96,7 @@
 						// width: 31rpx;
 						// height: 51rpx;
 						transform: translateY(-50%);
-						background: url(../../static/images/left_btn.png) no-repeat center;
+						background: red;
 						background-size: 30rpx 50rpx;
 					}
 					.bottom_btn {
@@ -107,7 +107,7 @@
 						// width:51rpx;
 						// height:31rpx;
 						transform: translateX(-50%);
-						background: url(../../static/images/bottom_btn.png) no-repeat center;
+						background: red;
 						background-size: 50rpx 30rpx;
 					}
 					.circel_btn {
@@ -117,7 +117,7 @@
 						width: 180rpx;
 						height: 180rpx;
 						transform: translate(-50%,-50%);
-						background: url(../../static/images/circel_btn.png) no-repeat;
+						background: red;
 						background-size: 100% 100%;
 					}
 
@@ -125,27 +125,27 @@
 					// 中间大按钮特效
 					// 上 */
 					.top_btn_hover {
-						background: url(../../static/images/top_btn_tap.png) no-repeat center;
+						background: red;
 						background-size: 50rpx 30rpx;
 					}
 					/* // 下 */
 					.bottom_btn_hover {
-						background: url(../../static/images/bottom_btn_tap.png) no-repeat center;
+						background: red;
 						background-size: 50rpx 30rpx;
 					}
 					/* // 左 */
 					.left_btn_hover {
-						background: url(../../static/images/left_btn_tap.png) no-repeat center;
+						background: red;
 						background-size: 30rpx 50rpx;
 					}
 					/* // 右 */
 					.right_btn_hover {
-						background: url(../../static/images/right_btn_tap.png) no-repeat center;
+						background: blue;
 						background-size: 30rpx 50rpx;
 					}
 					/* // 中 */
 					.circel_btn_hover {
-						background: url(../../static/images/circel_btn_tap.png) no-repeat;
+						background: skyblue;
 						background-size: 180rpx 180rpx;
 					}
 				}
@@ -171,11 +171,9 @@
 					.auto {
 						border-radius: 0rpx 80rpx 80rpx 0rpx;
 						// margin-left: 1rpx;
-						// background: url(../../static/images/right.png) no-repeat 100% 100% !important;
 					}
 					.Manu {
 						padding-right: -1rpx;
-						// background: url(../../static/images/left.png) no-repeat 100% 100% !important;
 					}
 				}
 			}

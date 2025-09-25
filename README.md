@@ -13,7 +13,7 @@
 # 预览
 
 
-![image](https://github.com/menglin1997/BLEConn/blob/master/static/1.gif)
+![image](./xcx.jpg)
 
 
 # 项目介绍
